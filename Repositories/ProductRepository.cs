@@ -15,7 +15,6 @@ namespace ArriveApi.Repositories
         public async Task<List<Product>> GetList()
         {
             return await _context.Products
-                //.Include(x=>x.Warehouse)
                 .AsNoTracking()
                 .ToListAsync();
         }
@@ -27,6 +26,7 @@ namespace ArriveApi.Repositories
 
         public async Task<Product?> Create(Product product)
         {
+            //maybe not done here but in a logic class we would want to check for uniqueness of the product name and which warehouse it assigned to.
             _context.Products.Add(product);
 
             int recordsAffected = await _context.SaveChangesAsync();
