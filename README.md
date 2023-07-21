@@ -10,11 +10,12 @@
 1. Depending on the profile you chose to run the Arrive Product Service your host will be different. Navigate to https://localhost:7110/swagger/index.html for Kestrel
 2. Click on the /api/products endpoint and call the post method with this product info:
 
-##Code
+## Code
 {
   "name": "Test1234",
   "quantity": 10
 }
+
 
 3. In the response body you should be given an id for the product you just inserted. You can use this value to test the PUT,DELETE and GET/{productId} endpoints
 
